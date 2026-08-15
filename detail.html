@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="src/output.css">
+    <title>IranTicket</title>
+</head>
+<body>
+     <!-- ========== Svgs In This Project ========== -->
+    <svg class="hidden">
+      <!-- Moon -->
+      <symbol
+        id="moon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+        />
+      </symbol>
+      <!-- Arrow-Right-End-On-Rectangle -->
+      <symbol
+        id="arrow-rte"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25"
+        />
+      </symbol>
+      <!-- Bars-4 -->
+      <symbol
+        id="bars-4"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+        />
+      </symbol>
+      <!-- Layot -->
+      <symbol
+        id="layot"
+        width="20px"
+        height="20px"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M15 10v11H3a1 1 0 0 1-1-1V10h13zm7 0v10a1 1 0 0 1-1 1h-4V10h5zm-1-7a1 1 0 0 1 1 1v4H2V4a1 1 0 0 1 1-1h18z"
+          />
+        </g>
+      </symbol>
+      <!-- Arrow-Right -->
+      <symbol
+        id="arrow-right"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+        />
+      </symbol>
+      <!-- Arrow-Left -->
+      <symbol
+        id="arrow-left"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+        />
+      </symbol>
+      <!-- Man & Women -->
+      <symbol
+        id="men-women"
+        width="40px"
+        height="40px"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M11.9999 14.5028C13.7948 14.5028 15.2499 13.0471 15.2499 11.2514C15.2499 9.4557 13.7948 8 11.9999 8C10.205 8 8.7499 9.4557 8.7499 11.2514C8.7499 13.0471 10.205 14.5028 11.9999 14.5028ZM5.38474 26.0764L8.07629 19.6097V21.8354V29.6806V38.6808C8.07629 39.4065 8.68147 40.0002 9.42113 40.0002C10.1608 40.0002 10.766 39.4065 10.766 38.6808V29.6806H13.3102V38.6808C13.3102 39.4065 13.9154 40.0002 14.655 40.0002C15.3947 40.0002 15.9999 39.4065 15.9999 38.6808L15.9999 29.6806V21.8354V20.057L18.6241 26.0977C18.9542 26.8575 19.8378 27.2059 20.5976 26.8758C21.3574 26.5457 21.7058 25.6621 21.3757 24.9023L18.1273 17.4249C17.7514 16.5597 16.898 16 15.9548 16H11.1769H9.11978H7.909C6.95244 16 6.08976 16.5754 5.72219 17.4585L2.61507 24.9236C2.29673 25.6884 2.65869 26.5665 3.42351 26.8848C4.18833 27.2032 5.06641 26.8412 5.38474 26.0764ZM29.3385 25.0948L32 19.8342V24.3122H32L29.4418 30.8923C29.1458 31.6537 29.7074 32.4746 30.5243 32.4746H32V38.6142C32 39.3975 32.617 40.0384 33.3711 40.0384C34.1251 40.0384 34.7421 39.3975 34.7421 38.6142V32.4746H37.2555V38.6142C37.2555 39.3975 37.8725 40.0384 38.6266 40.0384C39.3806 40.0384 39.9976 39.3975 39.9976 38.6142V32.4746H41.7534C42.5883 32.4746 43.1505 31.6201 42.82 30.8534L40 24.3122H39.9976V19.8292L42.6616 25.0948C43.0356 25.8341 43.938 26.1301 44.6772 25.7561C45.4164 25.3822 45.7125 24.4797 45.3385 23.7405L42.1609 17.4597C41.7078 16.5642 40.7896 15.9997 39.7861 15.9997H35.3365H33.2369H32.2141C31.2106 15.9997 30.2923 16.5642 29.8393 17.4597L26.6616 23.7405C26.2876 24.4797 26.5837 25.3822 27.3229 25.7561C28.0621 26.1301 28.9645 25.8341 29.3385 25.0948ZM36 14.5028C37.7949 14.5028 39.25 13.0471 39.25 11.2514C39.25 9.4557 37.7949 8 36 8C34.2051 8 32.75 9.4557 32.75 11.2514C32.75 13.0471 34.2051 14.5028 36 14.5028Z"
+          fill="#333333"
+        />
+      </symbol>
+      <!-- Location -->
+      <symbol
+        id="location"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+        />
+      </symbol>
+      <!-- Telephone -->
+       <symbol id="phone" width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 5.5C21 14.0604 14.0604 21 5.5 21C5.11378 21 4.73086 20.9859 4.35172 20.9581C3.91662 20.9262 3.69906 20.9103 3.50103 20.7963C3.33701 20.7019 3.18146 20.5345 3.09925 20.364C3 20.1582 3 19.9181 3 19.438V16.6207C3 16.2169 3 16.015 3.06645 15.842C3.12515 15.6891 3.22049 15.553 3.3441 15.4456C3.48403 15.324 3.67376 15.255 4.05321 15.117L7.26005 13.9509C7.70153 13.7904 7.92227 13.7101 8.1317 13.7237C8.31637 13.7357 8.49408 13.7988 8.64506 13.9058C8.81628 14.0271 8.93713 14.2285 9.17882 14.6314L10 16C12.6499 14.7999 14.7981 12.6489 16 10L14.6314 9.17882C14.2285 8.93713 14.0271 8.81628 13.9058 8.64506C13.7988 8.49408 13.7357 8.31637 13.7237 8.1317C13.7101 7.92227 13.7904 7.70153 13.9509 7.26005L13.9509 7.26005L15.117 4.05321C15.255 3.67376 15.324 3.48403 15.4456 3.3441C15.553 3.22049 15.6891 3.12515 15.842 3.06645C16.015 3 16.2169 3 16.6207 3H19.438C19.9181 3 20.1582 3 20.364 3.09925C20.5345 3.18146 20.7019 3.33701 20.7963 3.50103C20.9103 3.69907 20.9262 3.91662 20.9581 4.35173C20.9859 4.73086 21 5.11378 21 5.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <!-- Star -->
+         <symbol id="star" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+        </symbol>
+        <!-- Share -->
+         <symbol id="share" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+        </symbol>
+        <!-- Heart -->
+         <symbol id="heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </symbol>
+        <!-- Clock -->
+         <symbol id="clock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </symbol>
+
+    </svg>
+    <!-- =============== Header ============== -->
+    <header>
+      <section
+        class="w-full flex items-center justify-between bg-[#276780] p-2 text-white sm:px-4"
+      >
+        <div class="flex items-center gap-3">
+          <!-- Logo on Mobile -->
+          <img class="lg:hidden" src="public/img/Capture.PNG" alt="" />
+          <!-- Logo on Desktop -->
+          <img
+            class="hidden lg:block"
+            src="public/img/site-logo-desktop.PNG"
+            alt=""
+          />
+          <ul class="flex items-center gap-2 md:gap-5 text-[14px] font-medium">
+            <li>لیست استخرها</li>
+            <li>بلاگ</li>
+            <!-- li On Desktop -->
+            <li class="hidden lg:block">درباره ما</li>
+            <li class="hidden lg:block">ارتباط با ما</li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5">
+            <use href="#moon"></use>
+          </svg>
+          <div class="flex items-center gap-2 text-[14px] font-medium">
+            <svg class="w-5 h-5">
+              <use href="#arrow-rte"></use>
+            </svg>
+            <p>ورود</p>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- ================   Main  ================ -->
+     <main>
+        <div class="main-div w-[90%]   sm:w-[80%]  md:w-[60%] lg:w-full lg:flex items-center  justify-between mx-auto lg:mx-0 px-10  mt-12 border-gray-800 rounded-xl shadow-sm">
+            <!-- Slider main container -->
+            <div class="swiper mx-auto lg:mx-0 lg:w-[45%]  h-75 lg:order-2 rounded-md">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                 <!-- 1/6 -->
+                <div class="swiper-slide bg-blue-800">
+                  <img class="slide-img" src="" alt="">
+                </div>
+                <!-- 2/6 -->
+                <div class="swiper-slide bg-green-500">
+                  <img class="slide-img" src="" alt="">
+                </div>
+                <!-- 3/6 -->
+                <div class="swiper-slide bg-red-600">
+                  <img class="slide-img" src="" alt="">
+                </div>
+                <!-- 4/6 -->
+                 <div class="swiper-slide bg-blue-800">
+                  <img class="slide-img" src="" alt="">
+                </div>
+                <!-- 5/6 -->
+                <div class="swiper-slide bg-green-500">
+                  <img class="slide-img" src="" alt="">
+                </div>
+                <!-- 6/6 -->
+                <div class="swiper-slide bg-red-600">
+                  <img class="slide-img" src="" alt="">
+                </div>
+                ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+          
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+          
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
+
+
+            <!-- Context -->
+            <div class="context p-3 lg:order-1 lg:w-[50%]">
+                <p class="card-title text-[17px] font-bold mt-3 text-blue-600">
+                  استخر دریا
+                </p>
+
+                <div class="address-box flex items-center gap-2 mt-3 text-[14px]">
+                  <svg class="w-5 h-5">
+                    <use href="#location"></use>
+                  </svg>
+                  <p class="address">قم | بلوار خلیج فارس</p>
+                </div>
+
+                <div class="tel-phone flex items-center gap-2 mt-3 text-[14px]">
+                  <svg class="w-5 h-5">
+                    <use href="#phone"></use>
+                  </svg>
+                  <p class="phone-num">12345</p>
+                </div>
+                <!-- Rate -->
+                <div class="flex items-center gap-2  sm:justify-between border-b border-gray-500 pb-3">
+                    <div class="flex items-center gap-2">
+                        <!-- stars -->
+                        <div class="flex items-center gap-1">
+                            <!-- 1/5 -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor">
+                                <use class="" href="#star"></use>
+                            </svg>
+                            <!-- 2/5 -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor">
+                                <use href="#star"></use>
+                            </svg>
+                            <!-- 3/5 -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor">
+                                <use href="#star" fill="currentColor"></use>
+                            </svg>
+                            <!-- 4/5 -->
+                            <svg class="w-5 h-5">
+                                <use href="#star"></use>
+                            </svg>
+                            <!-- 5/5 -->
+                            <svg class="w-5 h-5">
+                                <use href="#star"></use>
+                            </svg>
+                        </div>
+                        <p>(25) نظر</p>
+                    </div>
+
+                    <div class="flex items-center gap-1 ">
+                        <div class="w-8 h-8 flex items-center justify-center border border-blue-800 rounded-md">
+                            <svg class="w-5 h-5">
+                                <use href="#share"></use>
+                            </svg>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center border border-blue-800 rounded-md">
+                            <svg class="w-5 h-5">
+                                <use href="#location"></use>
+                            </svg>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center border border-blue-800 rounded-md">
+                            <svg class="w-5 h-5">
+                                <use href="#heart"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Acceptance -->
+                    <div class="border-b border-gray-500 pb-5 mt-5 lg:flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gray-400 rounded-full text-blue-900 flex items-center justify-center">
+                                <svg class="w-10 h-10">
+                                    <use href="#men-women"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <p>نوع پذیرش</p>
+                                <p class="text-gray-400 text-[12px]">مورد استفاده بانوان و آقایان</p>
+                            </div>
+                        </div>
+
+                        <div  class="flex items-center gap-3 mt-5 lg:mt-0">
+                            <div class="w-12 h-12 bg-gray-400 rounded-full  text-blue-900 flex items-center justify-center">
+                                <svg class="w-10 h-10">
+                                    <use href="#clock"></use>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <p>زمان فعالیت</p>
+                                <p class="text-gray-400 text-[12px]">ساعت کاری 09:00 تا 24:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Context -->
+                     <p class="description">مجتمع تفریحی ورزشی...</p>
+            </div>
+            <!-- done context -->
+        </div>
+     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="src/detail.js"></script>
+</body>
+</html>
