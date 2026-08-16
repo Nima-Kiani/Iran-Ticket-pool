@@ -11,11 +11,14 @@ async function getList(page){
     pages.forEach(btn =>{
         btn.addEventListener('click' , ()=>{
             let num = Number(btn.textContent)
-             console.log(num);
+            
+             
 
              getList(num);
         })
     })
+
+   
     //  cards
     const cards = document.querySelectorAll(".card");
    
@@ -23,7 +26,7 @@ async function getList(page){
 
     cards.forEach((card , index) =>{
             const resultId = list.pool[index];
-            card.dataset.id = resultId;
+            card.dataset.id = resultId.id;
 
             console.log(card.dataset.id)
             console.log(list.pool[index].id)
@@ -63,9 +66,143 @@ async function getList(page){
        console.log(button.href);
         // console.log(resultId.link)
 
-        
-
+        //====== Filter =====
        
+        const justPools = document.querySelector(".just-pools");
+        
+        const justWarterParks = document.querySelector(".just-water-parks");
+        
+        const justMassage = document.querySelector(".massage");
+         // filter by all pools
+
+
+         
+        // Just pools
+        justPools.addEventListener('click' ,()=> {
+           const filterdPools = list.pool.filter(item =>{
+               return  item.type === "pool";
+            });
+            console.log(filterdPools)
+
+            // Hide all card
+            cards.forEach(card =>{
+                card.hidden = true;
+            });
+
+            // Show filterd cards
+            filterdPools.forEach(pool =>{
+                const card = document.querySelector(`[data-id="${pool.id}"]`);
+                console.log(pool.id)
+                console.log(card)
+                
+
+                 if (card) {
+                     card.hidden = false;
+                 }
+            })
+        });
+
+        // Just waterparks
+        justWarterParks.addEventListener('click' ,()=> {
+           const filterdPools = list.pool.filter(item =>{
+               return  item.type === "waterpark";
+            });
+            console.log(filterdPools)
+
+            // Hide all card
+            cards.forEach(card =>{
+                card.hidden = true;
+            });
+
+            // Show filterd cards
+            filterdPools.forEach(pool =>{
+                const card = document.querySelector(`[data-id="${pool.id}"]`);
+                console.log(pool.id)
+                console.log(card)
+                
+
+                 if (card) {
+                     card.hidden = false;
+                 }
+            })
+            
+        });
+
+          // Just massage
+        justMassage.addEventListener('click' ,()=> {
+           const filterdPools = list.pool.filter(item =>{
+               return  item.type === "massage";
+            });
+            console.log(filterdPools)
+
+            // Hide all cards
+            cards.forEach(card =>{
+                card.hidden = true;
+            });
+
+            // Show filterd cards
+            filterdPools.forEach(pool =>{
+                const card = document.querySelector(`[data-id="${pool.id}"]`);
+                console.log(pool.id)
+                console.log(card)
+                
+
+                 if (card) {
+                     card.hidden = false;
+                 }
+            })
+        });
+
+
+        // Filter by Ostan
+        // Ostan List
+        const ostanBtn = document.querySelector(".choose-ostan");
+        const ostanList = document.querySelector(".ostan-list");
+        ostanBtn.addEventListener('click',()=>{
+            ostanList.classList.toggle("hidden");
+            ostanList.classList.toggle("flex");
+        });
+
+        // Ostan Filter
+        const ostanItem = document.querySelectorAll(".ostan-item");
+         console.log(ostanItem)
+
+        ostanItem.forEach(item =>{
+            item.addEventListener('click',() => {
+            const ostanName = item.dataset.ostan;
+                const ostanFilter = list.pool.filter(pool =>{
+                
+                    cityList.innerHTML ="";
+                return pool.ostan === ostanName;
+               
+                });
+
+                
+        // Hide all cards
+        cards.forEach(card => {
+            card.hidden = true;
+        });
+
+        // Show filtered cards
+        ostanFilter.forEach(pool => {
+            const card = document.querySelector(`[data-id="${pool.id}"]`);
+
+                 if (card) {
+                   card.hidden = false;
+                 }
+                });
+             
+            });
+        });
+       
+
+        //===== City List =====
+        const cityList = document.querySelector(".city-list");
+
+        // Api city 
+        // list.pool.forEach(item => {
+        //     console.log(item.city);
+        // });
 
     });
     

@@ -846,33 +846,63 @@
                 <div class="hidden md:flex flex-col items-start justify-start mt-5 py-5">
                     <p class="text-blue-900 py-3">دسته بندی</p>
                     <span class="w-70 h-px bg-gray-500 mb-3"></span>
-                    <p>همه مجموعه ها</p>
-                    <p>استخر</p>
-                    <p>پارک آبی</p>
-                    <p>ماساژ</p>
+                    <p class="all-pools">همه مجموعه ها</p>
+                    <p class="just-pools">استخر</p>
+                    <p class="just-water-parks">پارک آبی</p>
+                    <p class="massage">ماساژ</p>
+                </div>
+                <!-- Ostan -->
+                <div class="flex  items-center justify-start mt-5"> 
+                    <p class=" w-full text-[17px] text-blue-900 border-b-2 border-gray-500  py-3">فیلتر براساس استان ها</p>                  
                 </div>
 
-                <div class=" flex items-center justify-start mt-5"> 
-                    <p class="w-full text-[17px] text-blue-900 border-b-2 border-gray-500  py-3">فیلتر براساس استان ها</p>
+                <div class="relative flex flex-col items-center justify-center">
+                    <p  class="choose-ostan  text-[14px]">همه استان ها</p>
+                    <!-- Ostan List -->
+                    <ul class="ostan-list hidden absolute left-0 top-3 border-none right-12 bg-white w-50 h-2s00 overflow-scroll flex-col  items-center justify-center border border-gray-900 rounded-md  mt-5">
+                       
+                       <li class="ostan-item" data-ostan="تهران">تهران</li>
+                       <li class="ostan-item" data-ostan="البرز">البرز</li>
+                       <li class="ostan-item" data-ostan="قم">قم</li>
+                       <li class="ostan-item" data-ostan="اصفهان">اصفهان</li>
+                       <li class="ostan-item" data-ostan="خراسان رضوی">خراسان رضوی</li>
+                       <li class="ostan-item" data-ostan="آذربایجان شرقی">آذربایجان شرقی</li>
+                       <li class="ostan-item" data-ostan="آذربایجان غربی">آذربایجان غربی</li>
+                       <li class="ostan-item" data-ostan="اردبیل">اردبیل</li>
+                       <li class="ostan-item" data-ostan="ایلام">ایلام</li>
+                       <li class="ostan-item" data-ostan="بوشهر">بوشهر</li>
+                       <li class="ostan-item" data-ostan="چهارمحال و بختیاری">چهارمحال و بختیاری</li>
+                       <li class="ostan-item" data-ostan="خراسان جنوبی">خراسان جنوبی</li>
+                       <li class="ostan-item" data-ostan="خراسان شمالی">خراسان شمالی</li>
+                       <li class="ostan-item" data-ostan="خورستان">خوزستان</li>
+                       <li class="ostan-item" data-ostan="زنجان">زنجان</li>
+                       <li class="ostan-item" data-ostan="سمنان">سمنان</li>
+                       <li class="ostan-item" data-ostan="سیستان و بلوچسان">سیستان و بلوچستان</li>
+                       <li class="ostan-item" data-ostan="فارس">فارس</li>
+                       <li class="ostan-item" data-ostan="قزوین">قزوین</li>
+                       <li class="ostan-item" data-ostan="کردستان">کردستان</li>
+                       <li class="ostan-item" data-ostan="کرمان">کرمان</li>
+                       <li class="ostan-item" data-ostan="کرمانشاه">کرمانشاه</li>
+                       <li class="ostan-item" data-ostan="کهکلویه و بویر احمد">کهگلویه و بویراحمد</li>
+                       <li class="ostan-item" data-ostan="گلستان">گلستان</li>
+                       <li class="ostan-item" data-ostan="گیلان">گیلان</li>
+                       <li class="ostan-item" data-ostan="لرستان">لرستان</li>
+                       <li class="ostan-item" data-ostan="مازندران">مازندران</li>
+                       <li class="ostan-item" data-ostan="مرکزی">مرکزی</li>
+                       <li class="ostan-item" data-ostan="هرمزگان">هرمزگان</li>
+                       <li class="ostan-item" data-ostan="همدان">همدان</li>
+                       <li class="ostan-item" data-ostan="یزد">یزد</li>
+                    </ul>
                 </div>
-                <div class="w-full flex items-center justify-center border border-gray-900 rounded-md mt-5">
-                     <p  class="text-[14px]">همه استان ها</p>
-                </div>
-               
-
-
-                <!-- <input class="w-70 h-7" type="browsers" value="انتخاب از بین استان ها">
-                <details id="browsers">
-                    <option value="همه استان ها">تهران</option>
-                    <option value="تهران"></option>
-                    <option value="کرج"></option>
-                </details> -->
+                <!-- City -->
                 <div class="flex items-center justify-start border-b-2 text-blue-900 border-gray-500 mt-5 py-3">
                     <p>فیلتر براساس شهر</p>
                 </div>
                 <div class="w-full flex items-center justify-center border border-gray-600 mt-5 rounded-md">
                      <p  class="text-[14px]">همه شهرها</p>
+                     <ul class="city-list"></ul>
                 </div>
+
 
                 <div class="flex flex-col items-start justify-start mt-5 py-5">
                     <p class="text-blue-900 py-3">جنسیت مجموعه</p>
